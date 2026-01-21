@@ -30,7 +30,9 @@ app.include_router(sync.router)
 @app.on_event("startup")
 async def startup_event():
     """Initialize database on startup"""
-    init_db()
+    # Database tables are already created in Supabase
+    # init_db() is skipped for cloud deployment
+    pass
 
 
 @app.get("/")
