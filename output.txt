@@ -1,0 +1,494 @@
+﻿python : Traceback 
+(most recent call 
+last):
+At line:1 char:1
++ python 
+init_cloud_db.py 
+2>&1 | Out-File 
+-FilePath output.txt 
+-Encodin ...
++ ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (Traceba   
+ ck (most recent     
+call last)::Stri    
+ng) [], RemoteEx    
+ception
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\sqlalchemy\eng
+ine\base.py", line 
+143, in __init__
+    self._dbapi_conne
+ction = engine.raw_co
+nnection()
+                     
+        ~~~~~~~~~~~~~
+~~~~~~~~^^
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\sqlalchemy\eng
+ine\base.py", line 
+3309, in 
+raw_connection
+    return 
+self.pool.connect()
+           
+~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\sqlalchemy\poo
+l\base.py", line 
+447, in connect
+    return _Connectio
+nFairy._checkout(self
+)
+           ~~~~~~~~~~
+~~~~~~~~~~~~~~~~^^^^^
+^
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\sqlalchemy\poo
+l\base.py", line 
+1264, in _checkout
+    fairy = _Connecti
+onRecord.checkout(poo
+l)
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\sqlalchemy\poo
+l\base.py", line 
+711, in checkout
+    rec = 
+pool._do_get()
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\sqlalchemy\poo
+l\impl.py", line 
+177, in _do_get
+    with 
+util.safe_reraise():
+         
+~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\sqlalchemy\uti
+l\langhelpers.py", 
+line 224, in __exit__
+    raise exc_value.w
+ith_traceback(exc_tb)
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\sqlalchemy\poo
+l\impl.py", line 
+175, in _do_get
+    return self._crea
+te_connection()
+           ~~~~~~~~~~
+~~~~~~~~~~~~~^^
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\sqlalchemy\poo
+l\base.py", line 
+388, in 
+_create_connection
+    return _Connectio
+nRecord(self)
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\sqlalchemy\poo
+l\base.py", line 
+673, in __init__
+    self.__connect()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\sqlalchemy\poo
+l\base.py", line 
+899, in __connect
+    with 
+util.safe_reraise():
+         
+~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\sqlalchemy\uti
+l\langhelpers.py", 
+line 224, in __exit__
+    raise exc_value.w
+ith_traceback(exc_tb)
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\sqlalchemy\poo
+l\base.py", line 
+895, in __connect
+    self.dbapi_connec
+tion = connection = p
+ool._invoke_creator(s
+elf)
+                     
+                    ~
+~~~~~~~~~~~~~~~~~~~^^
+^^^^
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\sqlalchemy\eng
+ine\create.py", line 
+661, in connect
+    return dialect.co
+nnect(*cargs, 
+**cparams)
+           ~~~~~~~~~~
+~~~~~^^^^^^^^^^^^^^^^
+^^^
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\sqlalchemy\eng
+ine\default.py", 
+line 630, in connect
+    return self.loade
+d_dbapi.connect(*carg
+s, **cparams)  # 
+type: ignore[no-any-r
+eturn]  # NOQA: E501
+           ~~~~~~~~~~
+~~~~~~~~~~~~~~~^^^^^^
+^^^^^^^^^^^^^
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\psycopg2\__ini
+t__.py", line 134, 
+in connect
+    dsn = 
+_ext.make_dsn(dsn, 
+**kwargs)
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\psycopg2\exten
+sions.py", line 167, 
+in make_dsn
+    parse_dsn(dsn)
+    ~~~~~~~~~^^^^^
+psycopg2.ProgrammingE
+rror: invalid dsn: 
+invalid connection 
+option "pgbouncer"
+
+
+The above exception 
+was the direct cause 
+of the following 
+exception:
+
+Traceback (most 
+recent call last):
+  File "E:\SalesRoute
+Tracker\sales-route-t
+racker\init_cloud_db.
+py", line 12, in 
+<module>
+    init_db()
+    ~~~~~~~^^
+  File "E:\SalesRoute
+Tracker\sales-route-t
+racker\backend\app\co
+re\database.py", 
+line 22, in init_db
+    Base.metadata.cre
+ate_all(bind=engine)
+    ~~~~~~~~~~~~~~~~~
+~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\sqlalchemy\sql
+\schema.py", line 
+5928, in create_all
+    bind._run_ddl_vis
+itor(
+    ~~~~~~~~~~~~~~~~~
+~~~~^
+        
+ddl.SchemaGenerator, 
+self, checkfirst=chec
+kfirst, tables=tables
+        ^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^
+    )
+    ^
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\sqlalchemy\eng
+ine\base.py", line 
+3259, in 
+_run_ddl_visitor
+    with 
+self.begin() as conn:
+         ~~~~~~~~~~^^
+  File "C:\Python314\
+Lib\contextlib.py", 
+line 141, in 
+__enter__
+    return 
+next(self.gen)
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\sqlalchemy\eng
+ine\base.py", line 
+3249, in begin
+    with 
+self.connect() as 
+conn:
+         
+~~~~~~~~~~~~^^
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\sqlalchemy\eng
+ine\base.py", line 
+3285, in connect
+    return self._conn
+ection_cls(self)
+           ~~~~~~~~~~
+~~~~~~~~~~^^^^^^
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\sqlalchemy\eng
+ine\base.py", line 
+145, in __init__
+    Connection._handl
+e_dbapi_exception_noc
+onnection(
+    ~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~^
+        err, 
+dialect, engine
+        
+^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\sqlalchemy\eng
+ine\base.py", line 
+2448, in _handle_dbap
+i_exception_noconnect
+ion
+    raise sqlalchemy_
+exception.with_traceb
+ack(exc_info[2]) 
+from e
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\sqlalchemy\eng
+ine\base.py", line 
+143, in __init__
+    self._dbapi_conne
+ction = engine.raw_co
+nnection()
+                     
+        ~~~~~~~~~~~~~
+~~~~~~~~^^
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\sqlalchemy\eng
+ine\base.py", line 
+3309, in 
+raw_connection
+    return 
+self.pool.connect()
+           
+~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\sqlalchemy\poo
+l\base.py", line 
+447, in connect
+    return _Connectio
+nFairy._checkout(self
+)
+           ~~~~~~~~~~
+~~~~~~~~~~~~~~~~^^^^^
+^
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\sqlalchemy\poo
+l\base.py", line 
+1264, in _checkout
+    fairy = _Connecti
+onRecord.checkout(poo
+l)
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\sqlalchemy\poo
+l\base.py", line 
+711, in checkout
+    rec = 
+pool._do_get()
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\sqlalchemy\poo
+l\impl.py", line 
+177, in _do_get
+    with 
+util.safe_reraise():
+         
+~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\sqlalchemy\uti
+l\langhelpers.py", 
+line 224, in __exit__
+    raise exc_value.w
+ith_traceback(exc_tb)
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\sqlalchemy\poo
+l\impl.py", line 
+175, in _do_get
+    return self._crea
+te_connection()
+           ~~~~~~~~~~
+~~~~~~~~~~~~~^^
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\sqlalchemy\poo
+l\base.py", line 
+388, in 
+_create_connection
+    return _Connectio
+nRecord(self)
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\sqlalchemy\poo
+l\base.py", line 
+673, in __init__
+    self.__connect()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\sqlalchemy\poo
+l\base.py", line 
+899, in __connect
+    with 
+util.safe_reraise():
+         
+~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\sqlalchemy\uti
+l\langhelpers.py", 
+line 224, in __exit__
+    raise exc_value.w
+ith_traceback(exc_tb)
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\sqlalchemy\poo
+l\base.py", line 
+895, in __connect
+    self.dbapi_connec
+tion = connection = p
+ool._invoke_creator(s
+elf)
+                     
+                    ~
+~~~~~~~~~~~~~~~~~~~^^
+^^^^
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\sqlalchemy\eng
+ine\create.py", line 
+661, in connect
+    return dialect.co
+nnect(*cargs, 
+**cparams)
+           ~~~~~~~~~~
+~~~~~^^^^^^^^^^^^^^^^
+^^^
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\sqlalchemy\eng
+ine\default.py", 
+line 630, in connect
+    return self.loade
+d_dbapi.connect(*carg
+s, **cparams)  # 
+type: ignore[no-any-r
+eturn]  # NOQA: E501
+           ~~~~~~~~~~
+~~~~~~~~~~~~~~~^^^^^^
+^^^^^^^^^^^^^
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\psycopg2\__ini
+t__.py", line 134, 
+in connect
+    dsn = 
+_ext.make_dsn(dsn, 
+**kwargs)
+  File "C:\Users\kale
+b\AppData\Roaming\Pyt
+hon\Python314\site-pa
+ckages\psycopg2\exten
+sions.py", line 167, 
+in make_dsn
+    parse_dsn(dsn)
+    ~~~~~~~~~^^^^^
+Connecting to Supabase...
+Error initializing database:
+sqlalchemy.exc.Progra
+mmingError: (psycopg2
+.ProgrammingError) 
+invalid dsn: invalid 
+connection option 
+"pgbouncer"
+
+(Background on this 
+error at: https://sql
+alche.me/e/20/f405)
